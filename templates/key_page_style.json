@@ -1,0 +1,22 @@
+{
+  "comment": "虚拟按键页样式",
+  "main_cont": { "bg_color": "0x000000" },
+  "image_assets": [
+    { "name": "key_released", "src": "/sdcard/themes/{{THEME_NAME}}/home/key_released.bin" },
+    { "name": "key_pressed", "src": "/sdcard/themes/{{THEME_NAME}}/home/key_pressed.bin" }
+  ],
+  "font_assets": [
+    { "name": "keyfont", "src": "/sdcard/themes/{{THEME_NAME}}/fonts/keyfont-16.bin" }
+  ],
+  "elements": [
+    { "name": "key1", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 20, "offset_y": 20, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 0, "elements": [{ "name": "key1_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key2", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 170, "offset_y": 20, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 1, "elements": [{ "name": "key2_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key3", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 320, "offset_y": 20, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 2, "elements": [{ "name": "key3_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key4", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 20, "offset_y": 170, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 3, "elements": [{ "name": "key4_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key5", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 170, "offset_y": 170, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 4, "elements": [{ "name": "key5_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key6", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 320, "offset_y": 170, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 5, "elements": [{ "name": "key6_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key7", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 20, "offset_y": 320, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 6, "elements": [{ "name": "key7_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key8", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 170, "offset_y": 320, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 7, "elements": [{ "name": "key8_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] },
+    { "name": "key9", "type": "imgbtn", "width": 140, "height": 140, "offset_x": 320, "offset_y": 320, "states": { "released": "key_released", "pressed": "key_pressed" }, "on_click": "onVirtualKeyClick", "indexData": 8, "elements": [{ "name": "key9_title", "type": "label", "font": "keyfont", "color": "0xFFFFFF", "layout_align": "CENTER" }] }
+  ]
+}

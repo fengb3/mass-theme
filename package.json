@@ -1,0 +1,19 @@
+{
+  "name": "mass-theme",
+  "version": "0.1.0",
+  "description": "MWKEYS Mass 80 主题制作工具",
+  "main": "./dist/index.js",
+  "bin": {
+    "mass-theme": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "comment": "底部导航栏样式",
+  "main_cont": { "bg_color": "0x000000" },
+  "image_assets": [
+    { "name": "dock_bg_mid", "src": "/sdcard/themes/{{THEME_NAME}}/dock/bg_mid.bin" },
+    { "name": "btn_home", "src": "/sdcard/themes/{{THEME_NAME}}/dock/btn_home.bin" },
+    { "name": "btn_music", "src": "/sdcard/themes/{{THEME_NAME}}/dock/btn_music.bin" },
+    { "name": "btn_pomodoro", "src": "/sdcard/themes/{{THEME_NAME}}/dock/btn_pomodoro.bin" },
+    { "name": "btn_performance", "src": "/sdcard/themes/{{THEME_NAME}}/dock/btn_performance.bin" },
+    { "name": "btn_settings", "src": "/sdcard/themes/{{THEME_NAME}}/dock/btn_settings.bin" }
+  ],
+  "font_assets": [
+    { "name": "dockfont", "src": "/sdcard/themes/{{THEME_NAME}}/fonts/dockfont-16.bin" }
+  ],
+  "elements": [
+    {
+      "name": "dock_container_big",
+      "type": "container",
+      "width": 480,
+      "height": 60,
+      "layout": "flex",
+      "flex_direction": "row",
+      "flex_align": "space_evenly",
+      "flex_gap": 0,
+      "offset_x": 0,
+      "offset_y": 420,
+      "elements": [
+        { "name": "dock_btn_home", "type": "imgbtn", "width": 48, "height": 48, "states": { "released": "btn_home" }, "on_click": "onDockBtnClick", "indexData": 1 },
+        { "name": "dock_btn_music", "type": "imgbtn", "width": 48, "height": 48, "states": { "released": "btn_music" }, "on_click": "onDockBtnClick", "indexData": 2 },
+        { "name": "dock_btn_pomodoro", "type": "imgbtn", "width": 48, "height": 48, "states": { "released": "btn_pomodoro" }, "on_click": "onDockBtnClick", "indexData": 3 },
+        { "name": "dock_btn_performance", "type": "imgbtn", "width": 48, "height": 48, "states": { "released": "btn_performance" }, "on_click": "onDockBtnClick", "indexData": 4 },
+        { "name": "dock_btn_settings", "type": "imgbtn", "width": 48, "height": 48, "states": { "released": "btn_settings" }, "on_click": "onDockBtnClick", "indexData": 5 }
+      ]
+    }
+  ]
+}

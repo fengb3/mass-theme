@@ -1,0 +1,27 @@
+{
+  "comment": "性能监控页样式",
+  "main_cont": { "bg_color": "0x000000" },
+  "image_assets": [
+    { "name": "monitorbg", "src": "/sdcard/themes/{{THEME_NAME}}/monitor/bg.bin" },
+    { "name": "network_up_icon", "src": "/sdcard/themes/{{THEME_NAME}}/monitor/network_up.bin" },
+    { "name": "network_down_icon", "src": "/sdcard/themes/{{THEME_NAME}}/monitor/network_down.bin" }
+  ],
+  "font_assets": [
+    { "name": "monitorfont", "src": "/sdcard/themes/{{THEME_NAME}}/fonts/monitorfont-16.bin" }
+  ],
+  "elements": [
+    { "name": "monitorbg", "type": "img", "src": "monitorbg", "width": 480, "height": 480, "offset_x": 0, "offset_y": 0 },
+    { "name": "cpu_percent_arc", "type": "arc", "width": 150, "height": 150, "offset_x": 35, "offset_y": 33, "range_min": 0, "range_max": 100, "value": 0, "bg_start_angle": 0, "bg_end_angle": 360, "arc_width": 10, "arc_color": "0xFFFFFF", "bg_arc_color": "0x3F3F3F" },
+    { "name": "cpu_percent_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "layout_align": "CENTER", "offset_x": -95, "offset_y": -175 },
+    { "name": "cpu_temp_bar", "type": "bar", "width": 200, "height": 16, "offset_x": 230, "offset_y": 40, "range_min": 0, "range_max": 100, "value": 0, "direction": "horizontal", "main_color": "0x161616", "indic_color": "0x3F3F3F", "radius": 8, "padding": 2 },
+    { "name": "cpu_temp_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "offset_x": 230, "offset_y": 60 },
+    { "name": "cpu_clock_bar", "type": "bar", "width": 200, "height": 16, "offset_x": 230, "offset_y": 90, "range_min": 0, "range_max": 100, "value": 0, "direction": "horizontal", "main_color": "0x161616", "indic_color": "0x3F3F3F", "radius": 8, "padding": 2 },
+    { "name": "cpu_clock_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "offset_x": 230, "offset_y": 110 },
+    { "name": "memory_bar", "type": "bar", "width": 200, "height": 16, "offset_x": 230, "offset_y": 150, "range_min": 0, "range_max": 100, "value": 0, "direction": "horizontal", "main_color": "0x161616", "indic_color": "0x3F3F3F", "radius": 8, "padding": 2 },
+    { "name": "memory_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "offset_x": 230, "offset_y": 170 },
+    { "name": "network_up_icon", "type": "img", "src": "network_up_icon", "width": 20, "height": 20, "offset_x": 30, "offset_y": 300 },
+    { "name": "network_up_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "offset_x": 60, "offset_y": 300 },
+    { "name": "network_down_icon", "type": "img", "src": "network_down_icon", "width": 20, "height": 20, "offset_x": 30, "offset_y": 330 },
+    { "name": "network_down_label", "type": "label", "font": "monitorfont", "color": "0xFFFFFF", "offset_x": 60, "offset_y": 330 }
+  ]
+}
