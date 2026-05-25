@@ -74,7 +74,7 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
   },
 
   refreshElements: async () => {
-    const { currentThemeId, pages, currentPageType } = get()
+    const { pages, currentPageType } = get()
     const page = pages.find(p => p.pageType === currentPageType)
     if (!page) return
     const elements = await dbElements.getElementsForPage(page.id)
