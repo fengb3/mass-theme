@@ -1,31 +1,20 @@
-import { Toolbar } from './components/Toolbar';
-import { PageTabs } from './components/PageTabs';
-import { PreviewFrame } from './components/PreviewFrame';
-import { Sidebar } from './components/Sidebar';
-import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
-import { useFileIO } from './hooks/useFileIO';
-import { useThemeStore } from './store/theme-store';
-import { useEffect } from 'react';
-
 export default function App() {
-  useKeyboardShortcuts();
-  const { loadSampleTheme } = useFileIO();
-  const theme = useThemeStore((s) => s.theme);
-
-  useEffect(() => {
-    if (!theme) {
-      loadSampleTheme('dark').catch(() => {});
-    }
-  }, []);
-
   return (
-    <div className="app">
-      <Toolbar />
-      <PageTabs />
-      <div className="main">
-        <Sidebar />
-        <PreviewFrame />
-      </div>
+    <div className="h-screen w-screen flex flex-col bg-neutral-900 text-white">
+      <header className="h-12 border-b border-neutral-700 flex items-center px-4 shrink-0">
+        <h1 className="text-sm font-bold">MWKEYS Theme Editor</h1>
+      </header>
+      <main className="flex flex-1 overflow-hidden">
+        <aside className="w-52 border-r border-neutral-700 p-2 shrink-0">
+          Sidebar
+        </aside>
+        <section className="flex-1 flex items-center justify-center bg-neutral-950">
+          Preview
+        </section>
+        <aside className="w-80 border-l border-neutral-700 p-2 shrink-0">
+          Property Panel
+        </aside>
+      </main>
     </div>
-  );
+  )
 }
