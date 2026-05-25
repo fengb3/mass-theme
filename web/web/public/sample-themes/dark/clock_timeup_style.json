@@ -1,0 +1,72 @@
+{
+    "comment": "clock_countdown_page 全部可配样式",
+    "main_cont": {
+        "bg_color": "0x000000"
+    },
+    "image_assets": [
+        {
+            "name": "timeup_goback",
+            "src": "/sdcard/themes/dark/clock/timeup_goback.bin"
+        },
+        {
+            "name": "homebg_blur_565",
+            "src": "/sdcard/themes/dark/home/homebg_blur_565.bin"
+        }
+    ],
+    "font_assets": [
+        {
+            "name": "timeup_timefont",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-64-time.bin"
+        },
+        {
+            "name": "timeup_textfont",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-32-week.bin"
+        }
+    ],
+    "elements": [
+        {
+            "name": "homebg_blur_565",
+            "type": "img",
+            "src": "homebg_blur_565",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "timeup_time",
+            "type": "label",
+            "font": "timeup_timefont",
+            "color": "0xFFFFFF",
+            "text_align": "CENTER",
+            "layout_align": "TOP_MID",
+            "offset_x": 0,
+            "offset_y": 150,
+            "text": "00:00"
+        },
+        {
+            "name": "timeup_text",
+            "type": "label",
+            "font": "timeup_textfont",
+            "color": "0xFFFFFF",
+            "text_align": "CENTER",
+            "layout_align": "TOP_MID",
+            "offset_x": 0,
+            "offset_y": 240,
+            "text": "Time's Up!"
+        },
+        {
+            "name": "timeup_goback",
+            "type": "imgbtn",
+            "width": 84,
+            "height": 84,
+            "offset_x": 380,
+            "offset_y": 16,
+            "states": {
+                "released": "timeup_goback",
+                "checked": "timeup_goback"
+            },
+            "on_click": "goBackToClockPage"
+        }
+    ]
+}

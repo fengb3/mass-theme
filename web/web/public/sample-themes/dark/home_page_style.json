@@ -1,0 +1,215 @@
+{
+    "comment": "home_page 全部可配样式",
+    "main_cont": {
+        "bg_color": "0x000000"
+    },
+    "image_assets": [
+        {
+            "name": "homebg",
+            "src": "/sdcard/themes/dark/home/homebg.bin"
+        },
+        {
+            "name": "homebg_mjpeg",
+            "src": "/sdcard/wallpaper/dynamic_0000.mjpeg.avi"
+        },
+        {
+            "name": "homebg_blur_565",
+            "src": "/sdcard/themes/dark/home/homebg_blur_565.bin"
+        },
+        {
+            "name": "volume_icon",
+            "src": "/sdcard/themes/dark/home/volume_icon.bin"
+        },
+        {
+            "name": "light_icon",
+            "src": "/sdcard/themes/dark/home/light_icon.bin"
+        },
+        {
+            "name": "muted_icon",
+            "src": "/sdcard/themes/dark/home/muted_icon.bin"
+        },
+        {
+            "name": "muted_msg",
+            "src": "/sdcard/themes/dark/home/muted_msg.bin"
+        }
+    ],
+    "font_assets": [
+        {
+            "name": "timefont",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-64-time.bin"
+        },
+        {
+            "name": "weekfont",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-32-week.bin"
+        },
+        {
+            "name": "volume_font_24",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-24-bold.bin"
+        }
+    ],
+    "elements": [
+        {
+            "name": "homebg",
+            "type": "img",
+            "src": "",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "homebg_mjpeg",
+            "type": "mjpeg",
+            "src": "homebg_mjpeg",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "time_label",
+            "type": "label",
+            "font": "timefont",
+            "color": "0xFFFFFF",
+            "layout_align":"TOP_RIGHT",
+            "offset_x": -16,
+            "offset_y": 21
+        },
+        {
+            "name": "week_label",
+            "type": "label",
+            "font": "weekfont",
+            "color": "0xCCCCCC",
+            "layout_align":"TOP_RIGHT",
+            "offset_x": -20,
+            "offset_y": 90
+        },
+        {
+            "name": "muted_icon",
+            "type": "img",
+            "src": "muted_icon",
+            "width": 50,
+            "height": 50,
+            "offset_x": 414,
+            "offset_y": 414
+        },
+        {
+            "name": "homebg_blur",
+            "type": "img",
+            "src": "homebg_blur_565",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "volume_bar",
+            "type": "bar",
+            "width": 160,
+            "height": 408,
+            "offset_x": 160,
+            "offset_y": 16,
+            "range_min": 0,
+            "range_max": 100,
+            "value": 50,
+            "direction": "vertical",
+            "main_color": "0x161616",
+            "indic_color": "0x3F3F3F",
+            "radius": 20,
+            "padding": 8,
+            "on_change": "onVolumeBarChange"
+        },
+        {
+            "name": "volume_icon",
+            "type": "img",
+            "src": "volume_icon",
+            "width": 48,
+            "height": 48,
+            "offset_x": 216,
+            "offset_y": 36
+        },
+        {
+            "name": "volume_percent_label",
+            "type": "label",
+            "font": "volume_font_24",
+            "color": "0xFFFFFF",
+            "text": "50%",
+            "text_align": "center",
+            "width": 144,
+            "height": 30,
+            "offset_x": 168,
+            "offset_y": 371
+        },
+        {
+            "name": "volume_label",
+            "type": "label",
+            "font": "volume_font_24",
+            "color": "0xFFFFFF",
+            "text": "VOLUME",
+            "text_align": "center",
+            "width": 144,
+            "height": 30,
+            "offset_x": 168,
+            "offset_y": 435
+        },
+        {
+            "name": "light_bar",
+            "type": "bar",
+            "width": 160,
+            "height": 408,
+            "offset_x": 160,
+            "offset_y": 16,
+            "range_min": 0,
+            "range_max": 100,
+            "value": 50,
+            "direction": "vertical",
+            "main_color": "0x161616",
+            "indic_color": "0x3F3F3F",
+            "radius": 20,
+            "padding": 8,
+            "on_change": "onLightBarChange"
+        },
+        {
+            "name": "light_icon",
+            "type": "img",
+            "src": "light_icon",
+            "width": 48,
+            "height": 48,
+            "offset_x": 216,
+            "offset_y": 36
+        },
+        {
+            "name": "light_percent_label",
+            "type": "label",
+            "font": "volume_font_24",
+            "color": "0xFFFFFF",
+            "text": "50%",
+            "text_align": "center",
+            "width": 144,
+            "height": 30,
+            "offset_x": 168,
+            "offset_y": 371
+        },
+        {
+            "name": "light_label",
+            "type": "label",
+            "font": "volume_font_24",
+            "color": "0xFFFFFF",
+            "text": "LIGHT",
+            "text_align": "center",
+            "width": 184,
+            "height": 30,
+            "offset_x": 148,
+            "offset_y": 435
+        },
+        {
+            "name": "muted_msg",
+            "type": "img",
+            "src": "muted_msg",
+            "width": 109,
+            "height": 131,
+            "offset_x": 186,
+            "offset_y": 175
+        }
+    ]
+}

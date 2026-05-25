@@ -1,0 +1,258 @@
+{
+    "comment": "virtualkey_page 全部可配样式",
+    "main_cont": {
+        "bg_color": "0x000000"
+    },
+    "image_assets": [
+        {
+            "name": "key_on",
+            "src": "/sdcard/themes/key/key_on.bin"
+        },
+        {
+            "name": "key_off",
+            "src": "/sdcard/themes/key/key_off.bin"
+        }
+    ],
+    "font_assets": [
+        {
+            "name": "key_font",
+            "src": "/sdcard/themes/dark/fonts/alexandria-24-artist.bin"
+        }
+    ],
+    "elements": [
+        {
+            "name": "key1",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 11,
+            "offset_y": 15,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 0
+        },
+        {
+            "name": "key1_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 11,
+            "offset_y": 35,
+            "text": "Print"
+        },
+        {
+            "name": "key2",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 167,
+            "offset_y": 15,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 1
+        },
+        {
+            "name": "key2_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 167,
+            "offset_y": 35,
+            "text": "Scroll"
+        },
+        {
+            "name": "key3",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 323,
+            "offset_y": 15,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 2
+        },
+        {
+            "name": "key3_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 323,
+            "offset_y": 35,
+            "text": "Pause"
+        },
+        {
+            "name": "key4",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 11,
+            "offset_y": 170,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 3
+        },
+        {
+            "name": "key4_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 11,
+            "offset_y": 190,
+            "text": "Insert"
+        },
+        {
+            "name": "key5",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 167,
+            "offset_y": 170,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 4
+        },
+        {
+            "name": "key5_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 167,
+            "offset_y": 190,
+            "text": "Home"
+        },
+        {
+            "name": "key6",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 323,
+            "offset_y": 170,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 5
+        },
+        {
+            "name": "key6_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 323,
+            "offset_y": 190,
+            "text": "Page Up"
+        },
+        {
+            "name": "key7",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 11,
+            "offset_y": 325,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 6
+        },
+        {
+            "name": "key7_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 11,
+            "offset_y": 345,
+            "text": "Delete"
+        },
+        {
+            "name": "key8",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 167,
+            "offset_y": 325,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 7
+        },
+        {
+            "name": "key8_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 167,
+            "offset_y": 345,
+            "text": "End"
+        },
+        {
+            "name": "key9",
+            "type": "imgbtn",
+            "width": 146,
+            "height": 140,
+            "offset_x": 323,
+            "offset_y": 325,
+            "states": {
+                "released": "key_off",
+                "pressed": "key_on"
+            },
+            "on_click": "onVirtualKeyClick",
+            "indexData": 8
+        },
+        {
+            "name": "key9_title",
+            "type": "label",
+            "font": "key_font",
+            "color": "0x999999",
+            "text_align": "CENTER",
+            "width": 146,
+            "height": 60,
+            "offset_x": 323,
+            "offset_y": 345,
+            "text": "Page Down"
+        }
+    ]
+}

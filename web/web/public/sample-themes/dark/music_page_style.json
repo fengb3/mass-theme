@@ -1,0 +1,87 @@
+{
+    "comment": "music_page 全部可配样式",
+    "main_cont": {
+        "bg_color": "0x000000"
+    },
+    "image_assets": [
+        {
+            "name": "cover",
+            "src": "/sdcard/themes/dark/music/bg.bin"
+        },
+        {
+            "name": "btn_play",
+            "src": "/sdcard/themes/dark/music/play.bin"
+        },
+        {
+            "name": "btn_pause",
+            "src": "/sdcard/themes/dark/music/pause.bin"
+        }
+    ],
+    "font_assets": [
+        {
+            "name": "chinese_song_font",
+            "src": "/sdcard/themes/common/fonts/36-all.bin"
+        },
+        {
+            "name": "chinese_artist_font",
+            "src": "/sdcard/themes/common/fonts/24-all.bin"
+        }
+    ],
+    "elements": [
+        {
+            "name": "cover",
+            "type": "img",
+            "src": "",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "play_btn",
+            "type": "imgbtn",
+            "width": 84,
+            "height": 84,
+            "offset_x": 380,
+            "offset_y": 16,
+            "states": {
+                "released": "btn_play",
+                "checked": "btn_pause"
+            },
+            "on_click": "switchPlayPause"
+        },
+        {
+            "name": "song_title",
+            "type": "label",
+            "font": "chinese_song_font",
+            "color": "0xFFFFFF",
+            "offset_x": 18,
+            "offset_y": 292
+        },
+        {
+            "name": "artist_name",
+            "type": "label",
+            "font": "chinese_artist_font",
+            "color": "0xFFFFFF",
+            "offset_x": 15,
+            "offset_y": 336
+        },
+        {
+            "name": "musicSlider",
+            "type": "slider",
+            "range_min": 0,
+            "range_max": 100,
+            "value": 0,
+            "step": 1,
+            "knob_visible": false,
+            "on_change": "onMusicSliderChange",
+            "main_color": "0xD9D9D9",
+            "indic_color": "0xFFFFFF",
+            "radius": 10,
+            "width": 448,
+            "height": 12,
+            "offset_x": 16,
+            "offset_y": 372
+        }
+    ]
+}

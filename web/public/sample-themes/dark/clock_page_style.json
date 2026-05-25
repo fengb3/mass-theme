@@ -1,0 +1,87 @@
+{
+    "comment": "clock_page 全部可配样式",
+    "main_cont": {
+        "bg_color": "0x000000"
+    },
+    "image_assets": [
+        {
+            "name": "clockpage_bg",
+            "src": "/sdcard/themes/dark/clock/clockpage_bg.bin"
+        },
+        {
+            "name": "clockpage_bg_opa25",
+            "src": "/sdcard/themes/dark/clock/clockpage_bg_opa25.bin"
+        },
+        {
+            "name": "btn_play",
+            "src": "/sdcard/themes/dark/music/play.bin"
+        },
+        {
+            "name": "btn_pause",
+            "src": "/sdcard/themes/dark/music/pause.bin"
+        },
+        {
+            "name": "start_line",
+            "src": "/sdcard/themes/dark/clock/start_line.bin"
+        }
+    ],
+    "font_assets": [
+        {
+            "name": "clocktimefont",
+            "src": "/sdcard/themes/dark/fonts/flynnmono-32-week.bin"
+        }
+    ],
+    "elements": [
+        {
+            "name": "clockpage_bg",
+            "type": "img",
+            "src": "clockpage_bg",
+            "width": 480,
+            "height": 480,
+            "offset_x": 0,
+            "offset_y": 0
+        },
+        {
+            "name": "clock_scale",
+            "type": "clock",
+            "width": 700,
+            "height": 700,
+            "marking_color": "0xFFFFFF",
+            "marking_color_opa": 25,
+            "marking_length": 70,
+            "marking_width": 6,
+            "offset_x": 72,
+            "offset_y": -292
+        },
+        {
+            "name": "time_clock_label",
+            "type": "label",
+            "font": "clocktimefont",
+            "color": "0xFFFFFF",
+            "offset_x": 24,
+            "offset_y": 355
+        },
+        {
+            "name": "start_line",
+            "type": "img",
+            "src": "start_line",
+            "width": 33,
+            "height": 182,
+            "offset_x": 404,
+            "offset_y": 253
+        },
+        {
+            "name": "play_btn",
+            "type": "imgbtn",
+            "width": 84,
+            "height": 84,
+            "offset_x": 380,
+            "offset_y": 16,
+            "states": {
+                "released": "btn_play",
+                "checked": "btn_pause"
+            },
+            "on_click": "switchClockPause"
+        }
+    ]
+}
