@@ -4,6 +4,7 @@ import * as dbThemes from '../db/themes'
 import * as dbPages from '../db/pages'
 import * as dbElements from '../db/elements'
 import * as dbAssets from '../db/assets'
+import { populateDefaultElements, createDefaultAssets } from '../utils/default-theme'
 
 interface ThemeState {
   themes: Theme[]
@@ -40,7 +41,10 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
 
   createTheme: async (name) => {
     const theme = await dbThemes.createTheme(name)
-    await dbPages.initPagesForTheme(theme.id)
+    const pages = await dbPages.initPagesForTheme(theme.id)
+    const pageIdMap = new Map(pages.map(p => [p.pageType, p.id]))
+    await createDefaultAssets(theme.id)
+    await populateDefaultElements(theme.id, pageIdMap)
     await get().loadThemes()
     await get().selectTheme(theme.id)
     return theme

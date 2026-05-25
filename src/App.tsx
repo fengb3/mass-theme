@@ -6,6 +6,7 @@ import { CanvasPreview } from './components/CanvasPreview'
 import { ElementTree } from './components/ElementTree'
 import { PropertyPanel } from './components/PropertyPanel'
 import { AssetManager } from './components/AssetManager'
+import { Dialog } from './components/Dialog'
 import { useUIStore } from './store/ui-store'
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
           )}
         </aside>
       </main>
+      <Dialog />
     </div>
   )
 }

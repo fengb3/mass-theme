@@ -37,7 +37,7 @@ export function AssetManager() {
           onClick={() => fileRef.current?.click()}
           className="text-xs bg-blue-600 px-2 py-0.5 rounded hover:bg-blue-500"
         >上传</button>
-        <input ref={fileRef} type="file" multiple accept="image/*,.ttf,.otf,.woff,.woff2,.avi" className="hidden" onChange={handleUpload} />
+        <input ref={fileRef} type="file" multiple accept="image/*,.ttf,.avi" className="hidden" onChange={handleUpload} />
       </div>
       <div className="space-y-1 text-xs">
         {assets.map(a => (

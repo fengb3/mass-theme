@@ -1,12 +1,12 @@
 import type { ClockStripProps } from '../../types/theme'
-import { Field } from './CommonFields'
+import { Field, ColorField } from './CommonFields'
 
 interface Props { props: ClockStripProps; onChange: (p: ClockStripProps) => void }
 
 export function ClockStripEditor({ props, onChange }: Props) {
   return (
     <div className="space-y-1.5">
-      <Field label="刻度颜色"><input className="field" value={props.marking_color} onChange={e => onChange({ ...props, marking_color: e.target.value })} /></Field>
+      <ColorField label="刻度颜色" value={props.marking_color} onChange={v => onChange({ ...props, marking_color: v })} />
       <div className="grid grid-cols-2 gap-1.5">
         <Field label="透明度"><input className="field" type="number" value={props.marking_color_opa} onChange={e => onChange({ ...props, marking_color_opa: +e.target.value })} /></Field>
         <Field label="间距"><input className="field" type="number" value={props.marking_spacing} onChange={e => onChange({ ...props, marking_spacing: +e.target.value })} /></Field>

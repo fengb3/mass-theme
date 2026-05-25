@@ -1,5 +1,5 @@
 import type { BarProps } from '../../types/theme'
-import { Field } from './CommonFields'
+import { Field, ColorField } from './CommonFields'
 
 interface Props { props: BarProps; onChange: (props: BarProps) => void }
 
@@ -17,8 +17,8 @@ export function BarEditor({ props, onChange }: Props) {
           <option value="vertical">垂直</option>
         </select>
       </Field>
-      <Field label="背景色"><input className="field" value={props.main_color} onChange={e => onChange({ ...props, main_color: e.target.value })} /></Field>
-      <Field label="指示器色"><input className="field" value={props.indic_color} onChange={e => onChange({ ...props, indic_color: e.target.value })} /></Field>
+      <ColorField label="背景色" value={props.main_color} onChange={v => onChange({ ...props, main_color: v })} allowTransparent />
+      <ColorField label="指示器色" value={props.indic_color} onChange={v => onChange({ ...props, indic_color: v })} allowTransparent />
       <div className="grid grid-cols-2 gap-1.5">
         <Field label="圆角"><input className="field" type="number" value={props.radius} onChange={e => onChange({ ...props, radius: +e.target.value })} /></Field>
         <Field label="内边距"><input className="field" type="number" value={props.padding} onChange={e => onChange({ ...props, padding: +e.target.value })} /></Field>

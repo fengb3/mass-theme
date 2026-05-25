@@ -1,5 +1,5 @@
 import type { ContainerProps } from '../../types/theme'
-import { Field } from './CommonFields'
+import { Field, ColorField } from './CommonFields'
 
 interface Props { props: ContainerProps; onChange: (p: ContainerProps) => void }
 
@@ -28,7 +28,7 @@ export function ContainerEditor({ props, onChange }: Props) {
         </select>
       </Field>
       <Field label="间距"><input className="field" type="number" value={props.flex_gap} onChange={e => onChange({ ...props, flex_gap: +e.target.value })} /></Field>
-      <Field label="背景色"><input className="field" value={props.bg_color || ''} onChange={e => onChange({ ...props, bg_color: e.target.value })} /></Field>
+      <ColorField label="背景色" value={props.bg_color || '0x000000'} onChange={v => onChange({ ...props, bg_color: v })} />
       <Field label="背景透明度"><input className="field" type="number" value={props.bg_opa ?? 255} onChange={e => onChange({ ...props, bg_opa: +e.target.value })} /></Field>
       <Field label="圆角"><input className="field" type="number" value={props.radius ?? 0} onChange={e => onChange({ ...props, radius: +e.target.value })} /></Field>
     </div>

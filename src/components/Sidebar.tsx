@@ -6,20 +6,19 @@ export function Sidebar() {
   const themes = useThemeStore(s => s.themes)
   const currentThemeId = useThemeStore(s => s.currentThemeId)
   const selectTheme = useThemeStore(s => s.selectTheme)
-  const createTheme = useThemeStore(s => s.createTheme)
-  const deleteTheme = useThemeStore(s => s.deleteTheme)
   const currentPageType = useThemeStore(s => s.currentPageType)
   const selectPage = useThemeStore(s => s.selectPage)
   const sidebarTab = useUIStore(s => s.sidebarTab)
   const setSidebarTab = useUIStore(s => s.setSidebarTab)
 
+  const openDialog = useUIStore(s => s.openDialog)
+
   const handleCreate = () => {
-    const name = prompt('主题名称')
-    if (name) createTheme(name)
+    openDialog('create-theme')
   }
 
   const handleDelete = (id: string) => {
-    if (confirm('确定删除此主题？')) deleteTheme(id)
+    openDialog('delete-theme', { themeId: id })
   }
 
   return (

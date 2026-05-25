@@ -1,5 +1,5 @@
 import type { ArcProps } from '../../types/theme'
-import { Field } from './CommonFields'
+import { Field, ColorField } from './CommonFields'
 
 interface Props { props: ArcProps; onChange: (p: ArcProps) => void }
 
@@ -19,8 +19,8 @@ export function ArcEditor({ props, onChange }: Props) {
         <Field label="旋转偏移"><input className="field" type="number" value={props.rotation} onChange={e => onChange({ ...props, rotation: +e.target.value })} /></Field>
         <Field label="弧线宽度"><input className="field" type="number" value={props.arc_width} onChange={e => onChange({ ...props, arc_width: +e.target.value })} /></Field>
       </div>
-      <Field label="指示器色"><input className="field" value={props.arc_color} onChange={e => onChange({ ...props, arc_color: e.target.value })} /></Field>
-      <Field label="背景弧色"><input className="field" value={props.bg_arc_color} onChange={e => onChange({ ...props, bg_arc_color: e.target.value })} /></Field>
+      <ColorField label="指示器色" value={props.arc_color} onChange={v => onChange({ ...props, arc_color: v })} />
+      <ColorField label="背景弧色" value={props.bg_arc_color} onChange={v => onChange({ ...props, bg_arc_color: v })} />
     </div>
   )
 }

@@ -1,13 +1,15 @@
 import type { LabelProps } from '../../types/theme'
-import { Field } from './CommonFields'
+import { Field, ColorField, FontField } from './CommonFields'
 
 interface Props { props: LabelProps; onChange: (props: LabelProps) => void }
 
 export function LabelEditor({ props, onChange }: Props) {
   return (
     <div className="space-y-1.5">
-      <Field label="字体"><input className="field" value={props.font} onChange={e => onChange({ ...props, font: e.target.value })} /></Field>
-      <Field label="颜色"><input className="field" value={props.color} onChange={e => onChange({ ...props, color: e.target.value })} /></Field>
+      <Field label="字体">
+        <FontField value={props.font} onChange={v => onChange({ ...props, font: v })} />
+      </Field>
+      <ColorField label="颜色" value={props.color} onChange={v => onChange({ ...props, color: v })} />
       <Field label="文本"><input className="field" value={props.text} onChange={e => onChange({ ...props, text: e.target.value })} /></Field>
       <Field label="对齐">
         <select className="field" value={props.text_align} onChange={e => onChange({ ...props, text_align: e.target.value as LabelProps['text_align'] })}>

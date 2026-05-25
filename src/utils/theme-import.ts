@@ -116,7 +116,7 @@ export async function importThemeFromZip(zipFile: File): Promise<string> {
 }
 
 async function findAssetFile(zip: JSZip, name: string): Promise<{ name: string; blob: Blob } | null> {
-  const extensions = ['.png', '.gif', '.jpg', '.jpeg', '.bmp', '.ttf', '.otf', '.woff', '.woff2', '.avi', '.bin']
+  const extensions = ['.png', '.gif', '.jpg', '.jpeg', '.bmp', '.ttf', '.avi', '.bin']
   for (const ext of extensions) {
     const path = `assets/${name}${ext}`
     const entry = zip.file(path)
@@ -141,7 +141,7 @@ function guessMime(filename: string): string {
   const ext = filename.split('.').pop()?.toLowerCase()
   const map: Record<string, string> = {
     png: 'image/png', gif: 'image/gif', jpg: 'image/jpeg', jpeg: 'image/jpeg', bmp: 'image/bmp',
-    ttf: 'font/ttf', otf: 'font/otf', woff: 'font/woff', woff2: 'font/woff2',
+    ttf: 'font/ttf',
     avi: 'video/avi', bin: 'application/octet-stream',
   }
   return map[ext || ''] || 'application/octet-stream'
@@ -150,7 +150,7 @@ function guessMime(filename: string): string {
 function guessAssetTypeFromExt(filename: string): 'image' | 'font' | 'video' {
   const ext = filename.split('.').pop()?.toLowerCase() || ''
   if (['png', 'gif', 'jpg', 'jpeg', 'bmp'].includes(ext)) return 'image'
-  if (['ttf', 'otf', 'woff', 'woff2'].includes(ext)) return 'font'
+  if (['ttf'].includes(ext)) return 'font'
   if (['avi'].includes(ext)) return 'video'
   return 'image'
 }

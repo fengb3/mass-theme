@@ -8,7 +8,7 @@ function guessMimeType(file: File): string {
 
 function guessAssetType(mimeType: string): AssetType {
   if (mimeType.startsWith('image/')) return 'image'
-  if (mimeType.startsWith('font/') || mimeType.includes('ttf') || mimeType.includes('otf') || mimeType.includes('woff')) return 'font'
+  if (mimeType.startsWith('font/') || mimeType.includes('ttf')) return 'font'
   if (mimeType.startsWith('video/') || mimeType.includes('avi')) return 'video'
   return 'image'
 }

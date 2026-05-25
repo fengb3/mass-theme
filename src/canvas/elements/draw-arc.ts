@@ -11,7 +11,7 @@ export function drawArc(
 ) {
   const cx = x + width / 2
   const cy = y + height / 2
-  const r = Math.min(width, height) / 2 - (props.arc_width || 10) / 2
+  const r = Math.max(0, Math.min(width, height) / 2 - (props.arc_width || 10) / 2)
   const rotationDeg = (props.rotation || 0) / 10
   const rotationRad = (rotationDeg - 90) * Math.PI / 180
 

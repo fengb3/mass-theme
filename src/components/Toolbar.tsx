@@ -1,17 +1,15 @@
 import { useThemeStore } from '../store/theme-store'
+import { useUIStore } from '../store/ui-store'
 
 export function Toolbar() {
   const currentThemeId = useThemeStore(s => s.currentThemeId)
   const themes = useThemeStore(s => s.themes)
   const currentTheme = themes.find(t => t.id === currentThemeId)
+  const openDialog = useUIStore(s => s.openDialog)
 
-  const handleAddElement = async () => {
+  const handleAddElement = () => {
     if (!currentThemeId) return
-    const name = prompt('元素名称')
-    if (!name) return
-    const type = prompt('元素类型 (img, label, imgbtn, bar, slider, arc, clock, clock_strip, mjpeg, container)')
-    if (!type) return
-    await useThemeStore.getState().addElement(name, type as any, {} as any)
+    openDialog('add-element')
   }
 
   const handleImport = async () => {
