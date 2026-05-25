@@ -11,8 +11,34 @@ export function Toolbar() {
     if (!name) return
     const type = prompt('元素类型 (img, label, imgbtn, bar, slider, arc, clock, clock_strip, mjpeg, container)')
     if (!type) return
-    const store = useThemeStore.getState()
-    await store.addElement(name, type as any, {} as any)
+    await useThemeStore.getState().addElement(name, type as any, {} as any)
+  }
+
+  const handleImport = async () => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = '.zip'
+    input.onchange = async (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (!file) return
+      const { importThemeFromZip } = await import('../utils/theme-import')
+      const themeId = await importThemeFromZip(file)
+      await useThemeStore.getState().loadThemes()
+      await useThemeStore.getState().selectTheme(themeId)
+    }
+    input.click()
+  }
+
+  const handleExport = async () => {
+    if (!currentThemeId) return
+    const { exportThemeToZip } = await import('../utils/theme-export')
+    const blob = await exportThemeToZip(currentThemeId)
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${currentTheme?.name || 'theme'}.zip`
+    a.click()
+    URL.revokeObjectURL(url)
   }
 
   return (
@@ -22,6 +48,15 @@ export function Toolbar() {
         <span className="text-sm text-neutral-300">{currentTheme.name}</span>
       )}
       <div className="flex-1" />
+      <button
+        onClick={handleImport}
+        className="text-xs bg-purple-700 px-3 py-1 rounded hover:bg-purple-600"
+      >导入ZIP</button>
+      <button
+        onClick={handleExport}
+        className="text-xs bg-orange-700 px-3 py-1 rounded hover:bg-orange-600"
+        disabled={!currentThemeId}
+      >导出ZIP</button>
       <button
         onClick={handleAddElement}
         className="text-xs bg-green-700 px-3 py-1 rounded hover:bg-green-600"
