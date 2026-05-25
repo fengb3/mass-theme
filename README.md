@@ -1,49 +1,73 @@
-# mass-theme
+# React + TypeScript + Vite
 
-MWKEYS Mass 80 主题脚手架 CLI 工具。
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 安装
+Currently, two official plugins are available:
 
-```bash
-npm install -g mass-theme
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## 使用
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-### 创建主题
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-```bash
-mass-theme create <主题名>
-mass-theme create <主题名> --dir <输出目录>
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-生成目录结构：
-
-```
-<主题名>/
-├── home_page_style.json        # 首页样式
-├── music_page_style.json       # 音乐页样式
-├── clock_page_style.json       # 计时器页样式
-├── clock_timeup_style.json     # 计时结束页样式
-├── monitor_page_style.json     # 性能监控页样式
-├── key_page_style.json         # 虚拟按键页样式
-├── dock_style.json             # 底部导航栏样式
-├── home/                       # 首页图片资源
-├── music/                      # 音乐页图片资源
-├── clock/                      # 计时器页图片资源
-├── monitor/                    # 监控页图片资源
-├── dock/                       # 导航栏图片资源
-└── fonts/                      # 主题字体
-```
-
-## 开发
-
-```bash
-npm install
-npm run build
-node dist/index.js --help
-```
-
-## License
-
-MIT
