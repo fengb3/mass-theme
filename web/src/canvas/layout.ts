@@ -1,7 +1,5 @@
 import type { LayoutAlign, ThemeElement } from '../types/theme'
 
-const CANVAS_SIZE = 480
-
 export function resolvePosition(
   el: { offset_x: number; offset_y: number; layout_align: LayoutAlign; rotation: number; x: number; y: number },
   elWidth: number,
@@ -30,7 +28,7 @@ export function resolvePosition(
 export function resolveDimensions(
   el: ThemeElement,
 ): { width: number; height: number } {
-  const p = el.props as Record<string, unknown>
+  const p = el.props as unknown as Record<string, unknown>
   return {
     width: (p.width as number) || 0,
     height: (p.height as number) || 0,
